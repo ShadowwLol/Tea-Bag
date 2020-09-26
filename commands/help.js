@@ -1,17 +1,18 @@
+const { prefix } = require("../config.json");
+
 module.exports = {
     name: 'help',
     description: 'Displays a help menu.',
     args: false,
-    usage: false,
+    usage: `${prefix}help`,
     guildOnly: false,
     cooldown: 5,
-    aliases: [''],
+    aliases: ['h'],
     async execute(message, args) {
-        const ping = await message.client.ws.ping;
-        message.channel.send({embed: {
-        title: "Help is on the way!",
-        color: 0xff0000,
-        description: `${ping}ms`
-        }});
+      message.channel.send({embed: {
+      title: "Help is on the way!",
+      //color: '#F34B7D',
+      description: `ms`
+      }});
     },
 };
