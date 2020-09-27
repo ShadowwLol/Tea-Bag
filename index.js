@@ -28,6 +28,7 @@ client.on('ready', () => {
 }); // Send a message when the client has successfully logged in
 
 client.on('message', message => {
+    //message.guild.channels.create("logs");
     if (!message.content.startsWith(prefix) || message.author.bot || message.webhookID) return; /* Cancels if the message:
         - Doesn't start with the prefix
         - Was sent by a bot
@@ -91,3 +92,4 @@ client.on('message', message => {
 }); // Runs when someone sends a message
 
 client.login(token); // Logs the client into Discord so it can listen for actions
+        

@@ -8,10 +8,8 @@ module.exports = {
     aliases: ['delete', 'remove'],
     async execute(message, args) {
       if(!message.member.hasPermission('ADMINISTRATOR') || !message.member.hasPermission('MANAGE_MESSAGES')){
-        console.log("No permissions");
         message.reply("You don't have permissions to use this command!");
     }else {
-      console.log("permissions");
       if(!args[0]) return message.reply ('Error, please define second argument')
 
       let messagestodelete = Number(args[0]) + 1;
