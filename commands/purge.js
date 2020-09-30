@@ -6,10 +6,8 @@ module.exports = {
     guildOnly: true,
     cooldown: 5,
     aliases: ['delete', 'remove'],
+    admin: true,
     async execute(message, args) {
-      if(!message.member.hasPermission('ADMINISTRATOR') || !message.member.hasPermission('MANAGE_MESSAGES')){
-        message.reply("You don't have permissions to use this command!");
-    }else {
       if(!args[0]) return message.reply ('Error, please define second argument')
 
       let messagestodelete = Number(args[0]) + 1;
@@ -27,5 +25,4 @@ module.exports = {
       }
     }
   }
-}
 };

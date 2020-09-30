@@ -7,6 +7,7 @@ const { readdirSync } = require('fs'); // A require statement exports a module f
 const { token, prefix } = require('./config.json'); // Gets strings from the config file you created
 
 const { Client, Collection } = require('discord.js'); // This is how your bot works - it's the module you installed with `npm install discord.js eslint` earlier
+const { exit, exitCode } = require('process');
 
 const client = new Client(); // Creates your bot client
 
@@ -52,6 +53,8 @@ client.on('message', message => {
 
         return message.reply(reply); // Sends back the reply and exits
     } // Runs if the command requires arguments and none were given
+
+    if (command.admin && !message.member.hasPermission('ADMINISTRATOR')) return;
 
     if (command.guildOnly && message.channel.type === 'dm') {
         return message.reply('that command is not available in DMs.'); // Sends a reply and exits

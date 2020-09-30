@@ -10,6 +10,7 @@ module.exports = {
     guildOnly: false,
     cooldown: 5,
     aliases: ['h'],
+    admin: false,
     async execute(message, args) {
       let arguments = String(args[0]);
       arguments = arguments.toLowerCase();

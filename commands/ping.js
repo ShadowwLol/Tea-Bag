@@ -6,6 +6,7 @@ module.exports = {
     guildOnly: false,
     cooldown: 5,
     aliases: ['latency'],
+    admin: false,
     async execute(message, args) {
         const ping = await message.client.ws.ping;
         message.channel.send({embed: {
